@@ -16,5 +16,6 @@
     - dotfiles
     - git
     - vscode
+    - sublime
     - vim
     - homebrew_cleanup
