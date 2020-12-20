@@ -27,7 +27,7 @@ function root_detect() {
 
 # Install homebrew
 function install_homebrew() {
-    info "Installing Homebrew... If it's already installed, this will do nothing."
+    printf "Installing Homebrew... If it's already installed, this will do nothing.\n"
 
     if [[ $(command -v brew) == "" ]]; then
         echo "Installing Hombrew"
