@@ -57,8 +57,6 @@ clone_git_repo() {
         printf "Cloning git repository $GIT_REPO_URL in folder: $GIT_CLONE_FOLDER \n"
         git clone --depth=1 --branch master "$GIT_REPO_URL" "$GIT_CLONE_FOLDER"
     fi
-
-  cd "$GIT_CLONE_FOLDER"
 }
 
 ## Main
@@ -71,12 +69,13 @@ root_detect
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Darwin*)
-      SYSTEM_OS="OSX"
-      SYSTEM_OS_VERSION=$(defaults read loginwindow SystemVersionStampAsString)
+        SYSTEM_OS="OSX"
+        SYSTEM_OS_VERSION=$(defaults read loginwindow SystemVersionStampAsString)
 
-      install_homebrew
-      install_git
-      clone_git_repo
+        install_homebrew
+        install_git
+        clone_git_repo
+        cd "$GIT_CLONE_FOLDER"
 
         printf "\n"
         printf "### INFORMATION\n"
@@ -87,8 +86,8 @@ case "${unameOut}" in
         printf "ROOT_RUN=$ROOT_RUN\n"
         printf "\n"
 
-      ;;
+        ;;
     *)
-      error_print "UNKNOWN OS: ${unameOut}\nPlease add support in script!\n"
-      ;;
+        error_print "UNKNOWN OS: ${unameOut}\nPlease add support in script!\n"
+        ;;
 esac
