@@ -5,6 +5,12 @@
   hosts: localhost
   connection: local
 
+  vars_prompt:
+    - name: "ansible_sudo_pass"
+      prompt: "Sudo password"
+      private: yes
+
   roles:
     - homebrew
     - zsh_oh-my-zsh
+    - dotfiles

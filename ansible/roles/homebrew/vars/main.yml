@@ -18,6 +18,7 @@ brew_packages:
     - gnu-indent
     - gnu-getopt
     - bash
+    - fish
     - screen
     - jq                                                            # Lightweight and flexible command-line JSON processor
     - pv                                                            # Monitor data's progress through a pipe
