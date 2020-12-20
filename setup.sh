@@ -9,6 +9,7 @@ SYSTEM_OS="Unknown"
 SYSTEM_OS_VERSION="Unknown"
 PACKAGE_MANAGER="Unknown"
 GIT_VERSION="Unknown"
+ANSIBLE_VERSION="Unknown"
 ROOT_RUN=""
 
 GIT_REPO_URL="https://github.com/manieperplex/dotFiles.git"
@@ -31,7 +32,7 @@ root_detect() {
 
 # Install homebrew
 install_homebrew() {
-    printf "Installing Homebrew... If it's already installed, this will do nothing.\n"
+    printf "Installing Homebrew... If it's already installed, update.\n"
 
     if [[ $(command -v brew) == "" ]]; then
         echo "Installing Hombrew"
@@ -48,6 +49,7 @@ install_homebrew() {
 install_git() {
     printf "Installing Git...\n"
     brew install git
+
     GIT_VERSION=$(git --version)
 }
 
@@ -57,6 +59,20 @@ clone_git_repo() {
         printf "Cloning git repository $GIT_REPO_URL in folder: $GIT_CLONE_FOLDER \n"
         git clone --depth=1 --branch master "$GIT_REPO_URL" "$GIT_CLONE_FOLDER"
     fi
+}
+
+install_ansible() {
+    printf "Installing Ansible... If it's already installed, update.\n"
+    if [[ $(command -v ansible) == "" ]]; then
+        echo "Installing Ansible"
+        brew install ansible
+        
+    else
+        echo "Updating Ansible"
+        $(ansible --upgrade)
+    fi
+    
+    ANSIBLE_VERSION=$(ansible --version)
 }
 
 ## Main
@@ -75,7 +91,8 @@ case "${unameOut}" in
         install_homebrew
         install_git
         clone_git_repo
-        cd "$GIT_CLONE_FOLDER"
+        install_ansible
+        #cd "$GIT_CLONE_FOLDER"
 
         printf "\n"
         printf "### INFORMATION\n"
@@ -83,6 +100,7 @@ case "${unameOut}" in
         printf "SYSTEM_OS_VERSION=$SYSTEM_OS_VERSION\n"
         printf "PACKAGE_MANAGER=$PACKAGE_MANAGER\n"
         printf "GIT_VERSION=$GIT_VERSION\n"
+        printf "ANSIBLE_VERSION=$ANSIBLE_VERSION\n"
         printf "ROOT_RUN=$ROOT_RUN\n"
         printf "\n"
 
