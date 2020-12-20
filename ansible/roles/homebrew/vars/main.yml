@@ -57,4 +57,37 @@ brew_packages:
     - yarn
 
 brew_cask_packages:
+    - menumeters
+    - iterm2
+    - wireshark
+
     - visual-studio-code
+    - phpstorm
+    - pycharm-ce
+    - postman
+    - sourcetree
+    - docker
+
+    - macpass
+    - veracrypt
+
+    - google-chrome
+    - firefox
+    - firefox-developer-edition
+    - thunderbird
+    - joplin
+    - sublime-text
+    - freemind
+    - openoffice
+    - foxitreader
+
+    - spotify
+    - signal
+    - skype
+    - banking-4
+    - hammerspoon
+    - gimp
+
+    - 1password
+    - clockify
+    - slack
