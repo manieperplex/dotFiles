@@ -55,3 +55,6 @@ brew_packages:
     - node
     - nvm
     - yarn
+
+brew_cask_packages:
+    - visual-studio-code

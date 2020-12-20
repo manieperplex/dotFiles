@@ -38,10 +38,10 @@ install_homebrew() {
     printf "Installing Homebrew... If it's already installed, update.\n"
 
     if [[ $(command -v brew) == "" ]]; then
-        echo "Installing Hombrew"
+        echo "Installing Hombrew..."
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     else
-        echo "Updating Homebrew"
+        echo "Updating Homebrew..."
         brew update
     fi
 
@@ -68,10 +68,10 @@ clone_git_repo() {
 install_ansible() {
     printf "Installing Ansible... If it's already installed, update.\n"
     if [[ $(command -v ansible) == "" ]]; then
-        echo "Installing Ansible"
+        echo "Installing Ansible..."
         brew install ansible
     else
-        echo "Updating Ansible"
+        echo "Updating Ansible..."
         brew upgrade ansible
     fi
 
@@ -80,6 +80,17 @@ install_ansible() {
 
 # Run ansible playbook installation
 run_ansible() {
+
+    printf "\n"
+    printf "### INFORMATION\n"
+    printf "SYSTEM_OS=$SYSTEM_OS\n"
+    printf "SYSTEM_OS_VERSION=$SYSTEM_OS_VERSION\n"
+    printf "PACKAGE_MANAGER=$PACKAGE_MANAGER\n"
+    printf "GIT_VERSION=$GIT_VERSION\n"
+    printf "ANSIBLE_VERSION=$ANSIBLE_VERSION\n"
+    printf "ROOT_RUN=$ROOT_RUN\n"
+    printf "\n"
+
     printf "Run ansible-playbook syntax check...\n"
     ${ANSIBLE_PLAYBOOK_CMD} --syntax-check
 
@@ -90,8 +101,7 @@ run_ansible() {
 ## Main
 #
 
-printf "Start installing Ansible prerequisites (git, etc.).\n"
-printf "After this is finished there is a prompt coming - be prepared!\n"
+printf "Start installing Ansible prerequisites (git, etc.)...\n"
 root_detect
 
 unameOut="$(uname -s)"
@@ -106,17 +116,6 @@ case "${unameOut}" in
         install_ansible
         cd "$GIT_CLONE_FOLDER"
         run_ansible
-
-        printf "\n"
-        printf "### INFORMATION\n"
-        printf "SYSTEM_OS=$SYSTEM_OS\n"
-        printf "SYSTEM_OS_VERSION=$SYSTEM_OS_VERSION\n"
-        printf "PACKAGE_MANAGER=$PACKAGE_MANAGER\n"
-        printf "GIT_VERSION=$GIT_VERSION\n"
-        printf "ANSIBLE_VERSION=$ANSIBLE_VERSION\n"
-        printf "ROOT_RUN=$ROOT_RUN\n"
-        printf "\n"
-
         ;;
     *)
         error_print "UNKNOWN OS: ${unameOut}\nPlease add support in script!\n"
