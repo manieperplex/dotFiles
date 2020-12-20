@@ -15,6 +15,9 @@ ROOT_RUN=""
 GIT_REPO_URL="https://github.com/manieperplex/dotFiles.git"
 GIT_CLONE_FOLDER="$HOME/dotFiles"
 
+ANSIBLE_PLAYBOOK_PATH="ansible/site.yml"
+ANSIBLE_PLAYBOOK_CMD="ansible-playbook --inventory localhost, ${ANSIBLE_PLAYBOOK_PATH}"
+
 ## Func
 #
 
@@ -61,18 +64,27 @@ clone_git_repo() {
     fi
 }
 
+# Install ansible if not existing
 install_ansible() {
     printf "Installing Ansible... If it's already installed, update.\n"
     if [[ $(command -v ansible) == "" ]]; then
         echo "Installing Ansible"
         brew install ansible
-        
     else
         echo "Updating Ansible"
-        $(ansible --upgrade)
+        brew upgrade ansible
     fi
-    
+
     ANSIBLE_VERSION=$(ansible --version)
+}
+
+# Run ansible playbook installation
+run_ansible() {
+    printf "Run ansible-playbook syntax check...\n"
+    ${ANSIBLE_PLAYBOOK_CMD} --syntax-check
+
+    printf "Run ansible-playbook install...\n"
+    ${ANSIBLE_PLAYBOOK_CMD}
 }
 
 ## Main
@@ -92,7 +104,8 @@ case "${unameOut}" in
         install_git
         clone_git_repo
         install_ansible
-        #cd "$GIT_CLONE_FOLDER"
+        cd "$GIT_CLONE_FOLDER"
+        run_ansible
 
         printf "\n"
         printf "### INFORMATION\n"

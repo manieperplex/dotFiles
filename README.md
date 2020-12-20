@@ -7,3 +7,6 @@ This repository contains my `.` Files an [Ansible](https://en.wikipedia.org/w/in
 1. Install Command Line Tools: `sh -c "$(curl -sSL https://raw.githubusercontent.com/manieperplex/dotFiles/master/install_xcode.sh)"`
 2. Run `sh -c "$(curl -sSL https://raw.githubusercontent.com/manieperplex/dotFiles/master/setup.sh)"`
   * Executes setup script
+  * Download repository to home folder
+  * Install ansible prerequisites
+  * Run Ansible
