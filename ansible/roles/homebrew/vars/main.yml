@@ -3,6 +3,7 @@
 brew_taps:
     - homebrew/cask-drivers
     - homebrew/cask-fonts
+    - homebrew/cask-versions
 
 brew_packages:
     - coreutils                                                     # GNU File, Shell, and Text utilities
