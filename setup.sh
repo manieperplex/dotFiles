@@ -8,7 +8,11 @@
 SYSTEM_OS="Unknown"
 SYSTEM_OS_VERSION="Unknown"
 PACKAGE_MANAGER="Unknown"
+GIT_VERSION="Unknown"
 ROOT_RUN=""
+
+GIT_REPO_URL="https://github.com/manieperplex/dotFiles.git"
+GIT_CLONE_FOLDER="$HOME/dotFiles"
 
 ## Func
 #
@@ -40,6 +44,13 @@ install_homebrew() {
     PACKAGE_MANAGER=$(brew -v)
 }
 
+# Install git (we dont want the apple git-fork)
+install_git() {
+    printf "Installing Git...\n"
+    $(brew install git)
+    GIT_VERSION=$(git --version)
+}
+
 ## Main
 #
 
@@ -54,12 +65,14 @@ case "${unameOut}" in
       SYSTEM_OS_VERSION=$(defaults read loginwindow SystemVersionStampAsString)
 
       install_homebrew
+      install_git
 
         printf "\n"
         printf "### INFORMATION\n"
         printf "SYSTEM_OS=$SYSTEM_OS\n"
         printf "SYSTEM_OS_VERSION=$SYSTEM_OS_VERSION\n"
         printf "PACKAGE_MANAGER=$PACKAGE_MANAGER\n"
+        printf "GIT_VERSION=$GIT_VERSION\n"
         printf "ROOT_RUN=$ROOT_RUN\n"
         printf "\n"
 
