@@ -14,3 +14,5 @@
     - homebrew
     - zsh_oh-my-zsh
     - dotfiles
+    - git
+    - vscode

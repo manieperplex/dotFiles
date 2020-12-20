@@ -1,0 +1,25 @@
+---
+
+vscode_extensions:
+  - 4ops.terraform
+  - azemoh.one-monokai
+  - CoenraadS.bracket-pair-colorizer-2
+  - DavidWang.ini-for-vscode
+  - dbaeumer.vscode-eslint
+  - donjayamanne.githistory
+  - dzannotti.vscode-babel-coloring
+  - eamodio.gitlens
+  - EditorConfig.EditorConfig
+  - esbenp.prettier-vscode
+  - Gruntfuggly.todo-tree
+  - mblode.pretty-formatter
+  - ms-azuretools.vscode-docker
+  - ms-python.python
+  - golang.go
+  - oderwat.indent-rainbow
+  - PKief.material-icon-theme
+  - rbbit.typescript-hero
+  - streetsidesoftware.code-spell-checker
+  - usernamehw.errorlens
+  - vscode-snippet.snippet
+  - vscoss.vscode-ansible
