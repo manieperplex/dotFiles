@@ -48,14 +48,6 @@ install_homebrew() {
     PACKAGE_MANAGER=$(brew -v)
 }
 
-# Install git (we dont want the apple git-fork)
-install_git() {
-    printf "Installing Git...\n"
-    brew install git
-
-    GIT_VERSION=$(git --version)
-}
-
 # Clone git repository if not existing
 clone_git_repo() {
     if [ ! -d "$GIT_CLONE_FOLDER" ] ; then
@@ -111,7 +103,6 @@ case "${unameOut}" in
         SYSTEM_OS_VERSION=$(defaults read loginwindow SystemVersionStampAsString)
 
         install_homebrew
-        #install_git
         clone_git_repo
         install_ansible
         cd "$GIT_CLONE_FOLDER"
