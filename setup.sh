@@ -111,7 +111,7 @@ case "${unameOut}" in
         SYSTEM_OS_VERSION=$(defaults read loginwindow SystemVersionStampAsString)
 
         install_homebrew
-        install_git
+        #install_git
         clone_git_repo
         install_ansible
         cd "$GIT_CLONE_FOLDER"
