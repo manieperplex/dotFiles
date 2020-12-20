@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -e
+#set -e
 
 ## Config
 #
@@ -19,14 +19,14 @@ error_print() {
 }
 
 # Detects if script is run as root
-function root_detect() {
+root_detect() {
   if ! [ $(id -u) -eq 0 ]; then
     ROOT_RUN="sudo "
   fi
 }
 
 # Install homebrew
-function install_homebrew() {
+install_homebrew() {
     printf "Installing Homebrew... If it's already installed, this will do nothing.\n"
 
     if [[ $(command -v brew) == "" ]]; then
