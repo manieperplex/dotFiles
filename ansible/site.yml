@@ -7,3 +7,4 @@
 
   roles:
     - homebrew
+    - zsh_oh-my-zsh

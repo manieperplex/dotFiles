@@ -1,0 +1,35 @@
+---
+
+- name: Execute OSX hombrew installation for zsh
+  import_tasks: osx-zsh-install.yaml
+  when: ansible_os_family == 'Darwin'
+
+- name: Install oh-my-zsh (using git clone)
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh
+    dest: ~/.oh-my-zsh
+
+- name: Clone zsh plugin zsh-autosuggestions
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions.git
+    dest: ~/.zsh_oh-my-zsh/plugins/zsh-autosuggestions
+
+- name: Clone zsh plugin zsh-syntax-highlighting
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: ~/.zsh_oh-my-zsh/plugins/zsh-syntax-highlighting
+
+- name: Retrive zsh path
+  shell: command -v zsh
+  register: zsh_path
+
+- name: Add {{ zsh_path.stdout }} to /etc/shells
+  lineinfile:
+    path: /etc/shells
+    line: "{{ zsh_path.stdout }}"
+  become: yes
+  become_method: sudo
+
+- name: Change shell for {{ lookup('env','USER') }} to zsh as default
+  shell: chsh -s {{ zsh_path.stdout }} {{ lookup('env','USER') }}
+  become: yes
