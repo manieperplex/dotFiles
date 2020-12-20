@@ -37,7 +37,7 @@ install_homebrew() {
         brew update
     fi
 
-    PACKAGE_MANAGER=$(command -v brew)
+    PACKAGE_MANAGER=$(brew -v)
 }
 
 ## Main
