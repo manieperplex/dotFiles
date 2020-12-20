@@ -47,8 +47,18 @@ install_homebrew() {
 # Install git (we dont want the apple git-fork)
 install_git() {
     printf "Installing Git...\n"
-    $(brew install git)
+    brew install git
     GIT_VERSION=$(git --version)
+}
+
+# Clone git repository if not existing
+clone_git_repo() {
+    if [ ! -d "$GIT_CLONE_FOLDER" ] ; then
+        printf "Cloning git repository $GIT_REPO_URL in folder: $GIT_CLONE_FOLDER \n"
+        git clone --depth=1 --branch master "$GIT_REPO_URL" "$GIT_CLONE_FOLDER"
+    fi
+
+  cd "$GIT_CLONE_FOLDER"
 }
 
 ## Main
@@ -66,6 +76,7 @@ case "${unameOut}" in
 
       install_homebrew
       install_git
+      clone_git_repo
 
         printf "\n"
         printf "### INFORMATION\n"
