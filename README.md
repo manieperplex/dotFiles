@@ -20,7 +20,7 @@ This repository contains my `.` Files an [Ansible](https://en.wikipedia.org/w/in
 * [x] dotfiles setup, optimizations
 * [x] .gitconfig
 * [x] vim setup incl. [vim-plug](https://github.com/junegunn/vim-plug) + plugins
-* [ ] tmux setup incl. [tpm](https://github.com/tmux-plugins/tpm) + plugins
+* [x] tmux setup incl. [tpm](https://github.com/tmux-plugins/tpm) + plugins
 * [x] Sublime setup
 * [ ] Python simple setup
 * [x] OSX [Homebrew](https://brew.sh/) setup
@@ -28,9 +28,9 @@ This repository contains my `.` Files an [Ansible](https://en.wikipedia.org/w/in
 * [x] OSX Homebrew cleanup
 * [x] OSX cli configuration
 * [ ] OSX system configuration scutil see [here](http://osxdaily.com/2012/10/24/set-the-hostname-computer-name-and-bonjour-name-separately-in-os-x/)
-* [ ] OSX Dock configuration using [dockutil](https://github.com/kcrawford/dockutil)
+* [x] OSX Dock configuration using [dockutil](https://github.com/kcrawford/dockutil)
 * [ ] OSX Apple store installation
-* [ ] OSX iTerm2 configuration see [here](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
+* [x] OSX iTerm2 configuration see [here](http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/)
 * [x] OSX file associations using [duti](https://github.com/moretension/duti)
 * [ ] OSX configure [loginitems](https://github.com/OJFord/loginitems)
 * [x] VSCode config setup
