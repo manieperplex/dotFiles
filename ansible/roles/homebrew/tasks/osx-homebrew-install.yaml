@@ -25,7 +25,7 @@
   when: "item.name | default(item) not in brew_tap_list.stdout"
 
 - name: hombrew list packages
-  command: brew list
+  command: brew list --formula
   register: brew_list
 
 - name: homebrew install packages

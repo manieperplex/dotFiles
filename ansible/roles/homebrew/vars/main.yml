@@ -79,6 +79,7 @@ brew_cask_packages:
     - thunderbird
     - joplin
     - freemind
+    - sublime-text
     - openoffice
     - foxitreader
 
