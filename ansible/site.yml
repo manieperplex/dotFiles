@@ -16,6 +16,7 @@
     - dotfiles
     - git
     - vscode
+    - tmux
     - sublime
     - vim
     - osx

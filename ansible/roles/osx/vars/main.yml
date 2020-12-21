@@ -20,8 +20,7 @@ dockutil_remove:
   - "Downloads"
   - "Terminal"
   - "Safari"
-  - "App Store" 
-  - "System Preferences"
+  - "App Store"
 
 dockutil_persist:
   # List all existing: dockutil --list
