@@ -16,7 +16,7 @@
     force: no
   become: yes
 
-- name: Missing manuel stepps [DO THIS MANUALLY]
+- name: Missing manual steps [DO THIS MANUALLY]
   debug:
     msg:
       - "System Preferences"
