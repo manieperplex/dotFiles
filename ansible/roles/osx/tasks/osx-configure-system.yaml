@@ -19,10 +19,11 @@
 - name: Missing manuel stepps [DO THIS MANUALLY]
   debug:
     msg:
-      - "Status Menu"
-      - " -> Power source / Battery"
-      - "    [x] Show percentage"
       - "System Preferences"
+      - " -> Dock & Menu Bar"
+      - "    [ ] Show recent applications in Docks"
+      - "   -> Battery"
+      - "   [x] Show percentage"
       - " -> Apple ID"
       - "    Sign In (If not done)"
       - " -> General"
@@ -36,8 +37,6 @@
       - "     Start after = 5 Minute"
       - "     -> Hot Corners"
       - "       Left Top = Put Display to Sleep"
-      - " -> Dock"
-      - "    [ ] Show recent applications in Docks"
       - " -> Mission Control"
       - "    [ ] Automatically rearrange Spaces based on most recent use"
       - "    [ ] Displays have separate Spaces"
