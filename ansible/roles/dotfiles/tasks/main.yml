@@ -18,6 +18,19 @@
     line: "export HOMEBREW_GITHUB_API_TOKEN=\"{{ github_token }}\""
   when: not all_secret.stat.exists
 
+- name: Check if oh-my-fish is Installed
+  stat:
+    path: "$HOME/.local/share/omf"
+  register: "omf_check"
+
+- debug:
+      msg: "oh-my-fish already installed"
+  when: omf_check.stat.exists
+
+- name: Install oh-my-fish (using CURL) # https://theworkaround.com/2016/10/11/installing-fish-on-osx.html
+  shell: 'curl -L http://get.oh-my.fish | fish'
+  when: not omf_check.stat.exists
+
 - name: Install dotfiles using bootstrap.py script
   command: "{{ role_path }}/bin/bootstrap.py"
   register: bootstrap
