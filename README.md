@@ -22,7 +22,10 @@ This repository contains my `.` Files an [Ansible](https://en.wikipedia.org/w/in
 * [x] vim setup incl. [vim-plug](https://github.com/junegunn/vim-plug) + plugins
 * [x] tmux setup incl. [tpm](https://github.com/tmux-plugins/tpm) + plugins
 * [x] Sublime setup
-* [ ] Python simple setup
+* [x] Python simple setup
+* [ ] Python setup with [pyenv](https://github.com/pyenv/pyenv)
+  * when pyenv [issue](https://github.com/pyenv/pyenv/issues/1643) is solved or a workaround is available
+  * install latest with [xxenv-latest](https://github.com/momo-lab/xxenv-latest)
 * [x] OSX [Homebrew](https://brew.sh/) setup
 * [x] OSX [Homebrew Cask](https://caskroom.github.io/) setup
 * [x] OSX Homebrew cleanup
