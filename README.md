@@ -3,8 +3,8 @@
 
 This repository contains my `.` Files an [Ansible](https://en.wikipedia.org/w/index.php?oldid=803771758) playbook
 
-# xcode-select
-`sh -c "$(curl -sSL https://raw.githubusercontent.com/manieperplex/dotFiles/master/install_xcode.sh)"`
+# xcode-select (MacOsX)
+`xcode-select --install`
 # Usage
 1. Run `sh -c "$(curl -sSL https://raw.githubusercontent.com/manieperplex/dotFiles/master/setup.sh)"`
   * Executes setup script
