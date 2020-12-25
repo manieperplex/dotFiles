@@ -90,6 +90,9 @@ alias git_clean_branch='git for-each-ref --format '"'"'%(refname:short)'"'"' ref
 # IntelliJ
 #alias idea='/usr/local/bin/idea'
 
+# PHPStorm
+alias pstorm='open -a PhpStorm'
+
 # Kubernetes
 alias k='kubectl'
 
