@@ -31,3 +31,15 @@
 # https://stackoverflow.com/questions/23918062/simple-vs-current-push-default-in-git-for-decentralized-workflow
 - name: Set upstream for local branch push
   shell: "git config --global push.default current"
+
+  # https://www.toptal.com/developers/gitignore
+- name: Check if ~/.gitignore exists
+  stat:
+    path: ~/.gitignore
+  register: gitignore
+
+- name: Create ~/.gitignore
+  template:
+    src: gitignore.conf
+    dest: "~/.gitignore"
+  when: not gitignore.stat.exists
