@@ -14,13 +14,18 @@
 # Install python via pyenv -> https://github.com/pyenv/pyenv
 # Install latest with https://github.com/momo-lab/xxenv-latest
 
+#- name: Update setuptools
+#  shell: 'python3 -m pip install --upgrade setuptools'
+#  environment:
+ #       PIP_REQUIRE_VIRTUALENV: false
+
 - name: Update setuptools
-  shell: 'python3 -m pip install --upgrade setuptools'
+  shell: 'pip install --upgrade setuptools'
   environment:
         PIP_REQUIRE_VIRTUALENV: false
 
 - name: Update pip
-  shell: 'python3 -m pip install --upgrade pip'
+  shell: 'pip install --upgrade pip'
   environment:
         PIP_REQUIRE_VIRTUALENV: false
 
