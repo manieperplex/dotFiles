@@ -47,6 +47,8 @@ brew_packages:
     - pwgen                                                         # Password generator
     - testssl                                                       # Tool which checks for the support of TLS/SSL ciphers and flaws
 
+    - postgresql
+
     - watch                                                         # Executes a program periodically, showing output fullscreen
     - htop                                                          # Improved top (interactive process viewer)
     - tree                                                          # Display directories as trees
