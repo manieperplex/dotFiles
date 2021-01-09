@@ -43,3 +43,7 @@
     src: gitignore.conf
     dest: "~/.gitignore"
   when: not gitignore.stat.exists
+
+# https://stackoverflow.com/questions/18393498/gitignore-all-the-ds-store-files-in-every-folder-and-subfolder
+- name: Use global gitignore for all repositories
+  shell: "git config --global core.excludesfile ~/.gitignore"
