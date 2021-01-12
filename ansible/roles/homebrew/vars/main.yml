@@ -55,10 +55,11 @@ brew_packages:
     - ctop
 
     - git
-    - git-flow-avh                                                  # https://github.com/petervanderdoes/gitflow-avh, https://forum.shakacode.com/t/git-flow-avh-rather-than-git-flow/168
+    - git-flow-archiver                                              # https://github.com/petervanderdoes/gitflow-avh, https://forum.shakacode.com/t/git-flow-avh-rather-than-git-flow/168
     - node
     - nvm
     - yarn
+    - direnv                                                        # https://direnv.net/
 
 brew_cask_packages:
     - menumeters
