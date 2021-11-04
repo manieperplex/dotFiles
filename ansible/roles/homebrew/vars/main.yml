@@ -60,6 +60,7 @@ brew_packages:
     - nvm
     - yarn
     - direnv                                                        # https://direnv.net/
+    - cherrytree                                                    # hierarchical note taking application - https://github.com/giuspen/cherrytree#building-cherrytree-on-macos
 
 brew_cask_packages:
     - menumeters
