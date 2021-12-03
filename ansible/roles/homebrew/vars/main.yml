@@ -6,67 +6,71 @@ brew_taps:
     - homebrew/cask-versions
 
 brew_packages:
-    - coreutils                                                     # GNU File, Shell, and Text utilities
-    - binutils                                                      # FSF Binutils for native development
-    - diffutils                                                     # File comparison utilities
-    - findutils                                                     # GNU find, xargs, and locate
-    - gnu-sed
-    - gawk
+    - coreutils                     # GNU File, Shell, and Text utilities
+    - binutils                      # FSF Binutils for native development
+    - diffutils                     # File comparison utilities
+    - findutils                      # GNU find, xargs, and locate
+    - gnu-sed                       # sed (stream editor) is a non-interactive command-line text editor
+    - gnu-which                     # shows the full path of (shell) commands (https://carlowood.github.io/which/)
+    - gnu-indent                    # beautify C code (https://www.gnu.org/software/indent/manual/)
+    - gnu-getopt                    # Parsing program options (https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
+    - gawk                          # program that you can use to select particular records in a file and perform operations upon them
+    - screen                        # screen manager with VT100/ANSI terminal emulation
+    - jq                            # Lightweight and flexible command-line JSON processor
+    - pv                            # Monitor data's progress through a pipe
     - grep
-    - less
-    - gnu-which
-    - gnu-indent
-    - gnu-getopt
+    - z                             # Tracks most-used directories to make cd smarter
     - bash
     - fish
-    - screen
-    - jq                                                            # Lightweight and flexible command-line JSON processor
-    - pv                                                            # Monitor data's progress through a pipe
-    
-    - p7zip                                                         # 7-Zip (high compression file archiver) implementation
+
+    - mc                            # Midnight commander
+    - lynx                          # Text-based web browser
+    - less                          # open-source file pager (http://greenwoodsoftware.com/less/index.html)
+    - grc                           # Colorize logfiles and command output
+
+    - p7zip                         # 7-Zip (high compression file archiver) implementation
     - gnu-tar
     - unzip
     - gzip
-    - pigz                                                          # Parallel gzip
-    - xz                                                            # General-purpose data compression with high compression ratio
+    - pigz                          # Parallel gzip
+    - xz                            # General-purpose data compression with high compression ratio
 
-    - z                                                             # Tracks most-used directories to make cd smarter
-    - diff-so-fancy                                                 # Good-lookin' diffs with diff-highlight and more
-    - grc                                                           # Colorize logfiles and command output
-    - mc                                                            # Midnight commander
-
-    - netcat                                                        # Utility for managing network connections
-    - nmap                                                          # Port scanning utility for large networks
-    - rsync
+    - netcat                        # Utility for managing network connections
+    - nmap                          # Port scanning utility for large networks
+    - rsync                         # a fast, versatile, remote (and local) file-copying tool
     - curl
-    - httpie                                                        # User-friendly cURL replacement (command-line HTTP client)    - wget --with-iri                                               # Internet file retriever
-    - lynx                                                          # Text-based web browser
+    - httpie                        # User-friendly cURL replacement (command-line HTTP client)    - wget --with-iri                                               # Internet file retriever
 
-    - openssl                                                       # SSL/TLS cryptography library
-    - ssh-copy-id                                                   # Copy identy to authorized keys of remote maschine
-    - pwgen                                                         # Password generator
-    - testssl                                                       # Tool which checks for the support of TLS/SSL ciphers and flaws
+
+    - openssl                       # SSL/TLS cryptography library
+    - ssh-copy-id                   # Copy identy to authorized keys of remote machine
+    - pwgen                         # Password generator
+    - testssl                       # Tool which checks for the support of TLS/SSL ciphers and flaws
 
     - postgresql
 
-    - watch                                                         # Executes a program periodically, showing output fullscreen
-    - htop                                                          # Improved top (interactive process viewer)
-    - tree                                                          # Display directories as trees
-    - ctop
+    - watch                         # Executes a program periodically, showing output fullscreen
+    - htop                          # Improved top (interactive process viewer)
+    - tree                          # Display directories as trees
+    - ctop                          # Top-like interface for container metrics
 
     - git
-    - git-flow-archiver                                              # https://github.com/petervanderdoes/gitflow-avh, https://forum.shakacode.com/t/git-flow-avh-rather-than-git-flow/168
+    - git-flow-archiver              # https://github.com/petervanderdoes/gitflow-avh, https://forum.shakacode.com/t/git-flow-avh-rather-than-git-flow/168
+    - diff-so-fancy                 # Good-lookin' diffs with diff-highlight and more
+    - direnv                        # load and unload environment variables depending on the current directory (https://direnv.net)
+
     - node
     - nvm
     - yarn
-    - direnv                                                        # https://direnv.net/
-    - cherrytree                                                    # hierarchical note taking application - https://github.com/giuspen/cherrytree#building-cherrytree-on-macos
+
+    - cherrytree                    # hierarchical note taking application (https://github.com/giuspen/cherrytree#building-cherrytree-on-macos)
 
 brew_cask_packages:
     - menumeters
     - iterm2
     - wireshark
 
+    - sublime-text
     - visual-studio-code
     - phpstorm
     - pycharm-ce
@@ -81,9 +85,9 @@ brew_cask_packages:
     - firefox
     - firefox-developer-edition
     - thunderbird
+
     - joplin
     - freemind
-    - sublime-text
     - openoffice
     - foxitreader
 
