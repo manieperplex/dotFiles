@@ -76,6 +76,10 @@ zstyle ':vcs_info:*:prompt:*' actionformats "${FMT_BRANCH}${FMT_ACTION}"
 zstyle ':vcs_info:*:prompt:*' formats       "${FMT_BRANCH}"
 zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
 
+# zsh-notify - Desktop notifications for long-running commands in ZSH (https://github.com/marzocchi/zsh-notify)
+# zstyle ':notify:*' error-title "Command failed"
+# zstyle ':notify:*' success-title "Command finished"
+
 # Hook information can be found here
 # http://zsh.sourceforge.net/Doc/Release/Functions.html
 add-zsh-hook precmd func_precmd
