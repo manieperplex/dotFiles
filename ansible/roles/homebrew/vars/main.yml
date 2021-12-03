@@ -35,12 +35,34 @@ brew_packages:
     - pigz                          # Parallel gzip
     - xz                            # General-purpose data compression with high compression ratio
 
-    - netcat                        # Utility for managing network connections
-    - nmap                          # Port scanning utility for large networks
     - rsync                         # a fast, versatile, remote (and local) file-copying tool
     - curl
-    - httpie                        # User-friendly cURL replacement (command-line HTTP client)    - wget --with-iri                                               # Internet file retriever
+    - httpie                        # User-friendly cURL replacement (command-line HTTP client)    - wget --with-iri
 
+    - util-linux                    # random collection of Linux utilities (https://github.com/util-linux/util-linux)
+    - netcat                        # Utility for managing network connections
+    - socat                         # netcat++ multipurpose relay (http://www.dest-unreach.org/socat/)
+    - nikto                         # Web server scanner which performs comprehensive tests against web servers (https://cirt.net/nikto2)
+    - ffuf                          # A fast web fuzzer written in Go (https://github.com/ffuf/ffuf)
+
+    # OSINT 
+    - nmap                          # Port scanning utility for large networks
+    - arping                        # sends arp and/or ip pings to a given host (https://github.com/ThomasHabets/arping, https://devconnected.com/arping-command-on-linux-explained/)
+    - dnsmap                        # Passive DNS network mapper (a.k.a. subdomains bruteforcer) (https://code.google.com/archive/p/dnsmap/)
+    - dnstracer                     # Trace a chain of DNS servers to the source (https://www.mavetju.org/unix/dnstracer.php)
+    - fping                         # Send ICMP ECHO_REQUEST packets to network hosts (https://fping.org/)
+    #- fragroute                     # intercepts, modifies, and rewrites egress traffic destined for a specified host (https://www.monkey.org/~dugsong/fragroute/)
+    - hping                         # TCP/IP packet assembler/analyzer (http://www.hping.org/)
+    - ike-scan                      # Discover and fingerprint IKE hosts (IPsec VPN Servers) (https://github.com/royhills/ike-scan)
+    - masscan                       # Mass IP port scanner (https://github.com/robertdavidgraham/masscan/)
+    - p0f                           # Passive OS fingerprinting, masquerade detection tool (https://lcamtuf.coredump.cx/p0f3/)
+    #- recon-ng                      # Web Reconnaissance Framework (https://github.com/lanmaster53/recon-ng)
+    - ssldump                       # SSLv3/TLS network protocol analyzer (http://ssldump.sourceforge.net/)
+    - sslh                          # A SSL/SSH MULTIPLEXER (https://www.rutschle.net/tech/sslh/README.html)
+    - sslscan                       # Test SSL/TLS enabled services to discover supported cipher suites (https://github.com/rbsec/sslscan)
+    - sslyze                        # fast and powerful SSL/TLS scanning tool and Python library (https://github.com/nabla-c0d3/sslyze)
+    - swaks                         # Swiss Army Knife for SMTP (https://www.jetmore.org/john/code/swaks/)
+    - theharvester                  # Gather materials from public sources (http://www.edge-security.com/theharvester.php)
 
     - openssl                       # SSL/TLS cryptography library
     - ssh-copy-id                   # Copy identy to authorized keys of remote machine
@@ -64,12 +86,13 @@ brew_packages:
     - nvm
     - yarn
 
-    - cherrytree                    # hierarchical note taking application (https://github.com/giuspen/cherrytree#building-cherrytree-on-macos)
-
 brew_cask_packages:
     - menumeters
     - iterm2
+
     - wireshark
+    #- zenmap                        # Multi-platform graphical interface for official Nmap Security Scanner (https://nmap.org/zenmap/)
+    #- maltego                       # Open source intelligence and graphical link analysis tool (https://www.maltego.com/)
 
     - sublime-text
     - visual-studio-code
