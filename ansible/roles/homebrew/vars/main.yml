@@ -97,6 +97,7 @@ brew_cask_packages:
     #- zenmap                        # Multi-platform graphical interface for official Nmap Security Scanner (https://nmap.org/zenmap/)
     #- maltego                       # Open source intelligence and graphical link analysis tool (https://www.maltego.com/)
     #- metasploit                    # Metasploit Framework (https://www.metasploit.com/)
+    #- burp-suite                    # Burp Suite Professional (https://portswigger.net/burp/pro)
 
     - sublime-text
     - visual-studio-code
