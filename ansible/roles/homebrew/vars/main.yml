@@ -109,6 +109,7 @@ brew_cask_packages:
 
     - macpass
     - veracrypt
+    - aws-vault                     # Tool to securely store and access AWS credentials in a development environment (https://github.com/99designs/aws-vault)
 
     - google-chrome
     - firefox
