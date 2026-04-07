@@ -1,0 +1,49 @@
+name: Deploy Production
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        required: true
+        default: staging
+        type: choice
+        options: [staging, production]
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Validating configuration..." && sleep 3 && echo "Config OK."
+
+  build:
+    name: Build Image
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - run: echo "Building Docker image..." && sleep 10 && echo "Image built."
+
+  deploy-staging:
+    name: Deploy → Staging
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - run: echo "Deploying to staging..." && sleep 6 && echo "Staging live."
+
+  smoke-test:
+    name: Smoke Test
+    runs-on: ubuntu-latest
+    needs: deploy-staging
+    steps:
+      - run: echo "Running smoke tests..." && sleep 5 && echo "All checks passed."
+
+  deploy-production:
+    name: Deploy → Production
+    runs-on: ubuntu-latest
+    needs: smoke-test
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - run: echo "Deploying to production..." && sleep 5m && echo "Production live."
